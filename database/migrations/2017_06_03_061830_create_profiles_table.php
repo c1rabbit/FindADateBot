@@ -20,6 +20,12 @@ class CreateProfilesTable extends Migration
             $table->integer('age');
             $table->string('location');
             $table->string('name');
+
+            $table->string('conversation_id')->nullable();
+            // $table->foreign('conversation_id')->references('conversation_id')
+            //   ->on('conversations')
+            //   ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
