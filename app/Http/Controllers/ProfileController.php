@@ -53,11 +53,12 @@ class ProfileController extends Controller
           $profile_search = Profile::where('profile_id', $profileId )->first();
           $uniqueId = (count($profile_search) > 0) ? false : true;
         }
+        $female_terms = ['lady', 'girl', 'female', 'woman', 'chick'];
         $profile = new Profile;
         $profile->profile_id = $profileId;
         $profile->name = $request->name;
         $profile->location = $request->location;
-        $profile->gender = $request->gender;
+        $profile->gender = in_array($request->gender, $female_terms)? 'F': 'M';
         $profile->age = $request->age;
         $profile->save();
         return response()->json([
