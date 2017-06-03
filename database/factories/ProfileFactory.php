@@ -13,8 +13,16 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\Profile::class, function (Faker\Generator $faker) {
+    $uniqueId = false;
+    $profileId = null;
+    while($uniqueId == false){
+      $profileId = bin2hex(random_bytes(10));
+      $profile_search = App\Profile::where('profile_id', $profileId )->first();
+      $uniqueId = (count($profile_search) > 0) ? false : true;
+    }
 
     return [
+        'profile_id' => $profileId,
         'name' => $faker->name,
         'gender' => 'F',
         'age' => $faker->numberBetween($min = 20, $max = 100),
