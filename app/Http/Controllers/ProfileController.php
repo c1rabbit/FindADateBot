@@ -120,7 +120,7 @@ class ProfileController extends Controller
       $matchProfiles = Profile::where('gender', '<>', $myProfile->gender)->get();
 
       return response()->json(
-        $matchProfiles[0]
+        $matchProfiles[rand(0,sizeof($matchProfiles) )]
       );
 
     }
