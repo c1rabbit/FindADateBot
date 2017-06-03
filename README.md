@@ -15,4 +15,25 @@ Works with MyPolly Bot
 * generate database models `php artisian migrate`
 * start server `php artisan serve`
 
+# API
+
+get 10 random profiles:
+`GET http://34.208.35.165/index.php/profiles`
+
+@return JSONArray
+
+store new profile:
+`GET http://34.208.35.165/index.php/profile/store`
+
+@param String name, String location, Char gender, int age
+
+@return JSONObject
+
+get 1 profile by profile_id:
+`GET http://34.208.35.165/index.php/profile/show/{id}`
+
+@param String profile_id
+
+@return JSONObject
+
 built using Laravel Framework
