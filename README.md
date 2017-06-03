@@ -30,7 +30,7 @@ store new profile:
 @return JSONObject
 
 get 1 profile by profile_id:
-`GET http://34.208.35.165/index.php/profile/show/{id}`
+`GET http://34.208.35.165/index.php/profile/show/{profile_id}`
 
 @param String profile_id
 
