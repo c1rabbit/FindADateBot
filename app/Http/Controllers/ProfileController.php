@@ -120,12 +120,12 @@ class ProfileController extends Controller
       //match with profile opposite of gender
       $matchProfiles = Profile::where('gender', '<>', $myProfile->gender)->get();
       $otherPerson = $matchProfiles[rand(0,sizeof($matchProfiles) )];
-      return response()->json(
-        'match_profile_id':$otherPerson->profile_id,
-        'match_location':$otherPerson->location,
-        'match_age':$otherPerson->age,
-        'match_gender':$otherPerson->gender,
-        'match_name':$otherPerson->name
+      return response()->json([
+        'match_profile_id'=>$otherPerson->profile_id,
+        'match_location'=>$otherPerson->location,
+        'match_age'=>$otherPerson->age,
+        'match_gender'=>$otherPerson->gender,
+        'match_name'=>$otherPerson->name]
       );
 
     }
