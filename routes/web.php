@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('profiles', 'ProfileController@index');
 Route::get('profile/store', 'ProfileController@store');
 Route::get('profile/show/{id}', 'ProfileController@show');
+Route::get('profile/match/{profile_id}', 'ProfileController@match');

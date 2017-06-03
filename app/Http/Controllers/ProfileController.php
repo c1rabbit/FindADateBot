@@ -112,4 +112,16 @@ class ProfileController extends Controller
     {
         //
     }
+    public function match($profile_id)
+    {
+      $myProfile = Profile::where('profile_id', $profile_id)->first();
+
+      //match with profile opposite of gender
+      $matchProfiles = Profile::where('gender', '<>', $myProfile->gender)->get();
+
+      return response()->json(
+        $matchProfiles[0]
+      );
+
+    }
 }

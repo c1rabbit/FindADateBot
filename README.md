@@ -36,4 +36,11 @@ get 1 profile by profile_id:
 
 @return JSONObject
 
+find a match:
+`GET http://34.208.35.165/index.php/profile/match/{profile_id}`
+
+@param profile_id your profile_id
+
+@return JSONObject other person's profile object
+
 built using Laravel Framework
