@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Profile;
+use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
@@ -14,7 +15,12 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        //
+      $profiles = DB::table('profiles')
+              ->inRandomOrder()
+              ->limit(5)->get();
+      return response()->json(
+        $profiles
+      );
     }
 
     /**

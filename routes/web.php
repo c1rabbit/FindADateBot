@@ -17,5 +17,6 @@ Route::get('/', function () {
 // Route::resource('profiles', 'ProfileController', ['only' =>[
 //   'show', 'store', 'update'
 // ]]);
+Route::get('profiles', 'ProfileController@index');
 Route::get('profile/store', 'ProfileController@store');
 Route::get('profile/show/{id}', 'ProfileController@show');
