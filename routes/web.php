@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('profiles', 'ProfileController', ['only' =>[
-  'show', 'store', 'update'
-]]);
+// Route::resource('profiles', 'ProfileController', ['only' =>[
+//   'show', 'store', 'update'
+// ]]);
 Route::get('profile/store', 'ProfileController@store');
-Route::get('profile/show/{id}', 'ProfileController@store');
+Route::get('profile/show/{id}', 'ProfileController@show');
