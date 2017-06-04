@@ -2,6 +2,9 @@
 
 Works with MyPolly Bot
 
+## MyPolly Bot Submission
+JSON file and screenshots in [submission](https://github.com/c1rabbit/FindADateBot/tree/master/submission) directory
+
 # Optimal Environment
 
 * php 5.6+
