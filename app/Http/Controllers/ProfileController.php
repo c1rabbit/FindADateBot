@@ -116,9 +116,11 @@ class ProfileController extends Controller
     public function match($profile_id)
     {
       $myProfile = Profile::where('profile_id', $profile_id)->first();
-
+      $age_low =$myProfile->age -5;
+      $age_high = $myProfile->age +5;
       //match with profile opposite of gender
-      $matchProfiles = Profile::where('gender', '<>', $myProfile->gender)->get();
+      $matchProfiles = Profile::where('gender', '<>', $myProfile->gender)
+       ->whereBetween('age', [$age_low, $age_high])->get();
       $otherPerson = $matchProfiles[rand(0,sizeof($matchProfiles) )];
       return response()->json([
         'match_profile_id'=>$otherPerson->profile_id,
