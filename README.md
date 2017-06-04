@@ -17,30 +17,40 @@ Works with MyPolly Bot
 
 # API
 
-get 10 random profiles:
-`GET http://34.208.35.165/index.php/profiles`
+####get 10 random profiles:
+
+`http://34.208.35.165/index.php/profiles`
 
 @return JSONArray
 
-store new profile:
-`GET http://34.208.35.165/index.php/profile/store`
+####store new profile:
+
+`http://34.208.35.165/index.php/profile/store`
 
 @param String name, String location, Char gender, int age
 
 @return JSONObject
 
-get 1 profile by profile_id:
-`GET http://34.208.35.165/index.php/profile/show/{profile_id}`
+####get 1 profile by profile_id:
+
+`http://34.208.35.165/index.php/profile/show/{profile_id}`
 
 @param String profile_id
 
 @return JSONObject
 
-find a match:
-`GET http://34.208.35.165/index.php/profile/match/{profile_id}`
+####find a match:
+
+`http://34.208.35.165/index.php/profile/match/{profile_id}`
 
 @param profile_id your profile_id
 
 @return JSONObject other person's profile object
+
+#### get 10 most recently created profiles
+
+`http://34.208.35.165/index.php/profiles/recent`
+
+@return JSONArray
 
 built using Laravel Framework
