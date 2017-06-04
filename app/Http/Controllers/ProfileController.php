@@ -131,4 +131,12 @@ class ProfileController extends Controller
       );
 
     }
+    public function recent(){
+      $profiles = Profile::limit(20)
+        ->orderBy('id', 'DESC')->get();
+      return response()->json(
+        $profiles
+      );
+
+    }
 }
